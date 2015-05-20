@@ -53,11 +53,8 @@ CAS的认证流程是基于Spring mvc 与Spring web-flow，主要流程控制文
         </transition>
 </view-state>
 这时需要在/WEB-INF/view/jsp/default/ui下添加一个redirectPage.jsp，其主要功能就是生成redirect_uri，并控制浏览器跳转
-<html>
-  <head>
-  </head>
-  <body>
-  <script>
+
+
   function urlencode (str) {  
 	    str = (str + '').toString();   
 	    return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').  
@@ -67,9 +64,8 @@ CAS的认证流程是基于Spring mvc 与Spring web-flow，主要流程控制文
   url = urlencode(url);
   //location = url;
   location="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx825fa487322669e0&redirect_uri="+url+"&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
-  </script>
-  </body>
-</html>
+
+
 
 微信客户端会回调redirect_uri，并携带获取openid的code参数，此时我们将流程跳转至状态getCode
 <action-state id="getCode">
