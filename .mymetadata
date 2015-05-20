@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="cas_debug"
+  id="myeclipse.1430813193848"
+  context-root="/cas_debug"
+  j2ee-spec="5.0"
+  archive="cas_debug.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
