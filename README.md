@@ -31,7 +31,7 @@ https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code
 ##三、微信和CAS整合
 CAS的认证流程是基于Spring mvc 与Spring web-flow，主要流程控制文件为login-webflow.xml，考虑到和微信整合，用户的登录流程大致可以简化为： <br/>
 为了稳妥起见，所有关于CAS读写票据的操作，都采用CAS原有流程。<br/>
-![image](https://github.com/zhaofali/cas_wx/blob/master/1.png)
+![image](https://github.com/zhaofali/cas_wx/blob/master/1.png)<br/>
 详情见博客链接
 
 
