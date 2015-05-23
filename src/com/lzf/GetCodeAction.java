@@ -16,8 +16,8 @@ import org.springframework.webflow.execution.RequestContext;
 
 public class GetCodeAction {
 	
-	private final String AppID = "wx825fa487322669e0";
-	private final String AppSecret = "101de81979cac9d8098fba2219608278";
+	private final String AppID = "sdfafasfasf";
+	private final String AppSecret = "afdasfasfasf";
     private final String TOKEN_URL = "https://api.weixin.qq.com/sns/oauth2/access_token?";
     
     private DataSource dataSource;
@@ -65,17 +65,17 @@ public class GetCodeAction {
 	        try{
 		        String username = jdbcTemplate.queryForObject(sql, String.class, openid);
 		        if(username != null && !"".equals(username)){
-		        	//Èô´æÔÚÓëopenidÏà¹ØÁªµÄÓÃ»§£¬ÔòÒÑopenidÎªÃÜÂë£¬×Ô¶¯µÇÂ¼
+		        	//è‹¥å­˜åœ¨ä¸openidç›¸å…³è”çš„ç”¨æˆ·ï¼Œåˆ™å·²openidä¸ºå¯†ç ï¼Œè‡ªåŠ¨ç™»å½•
 		        	request.setAttribute("username", username);
 		        	request.setAttribute("openid", openid);
 		        	return "WEIXINOK";
 		        }else{
-		        	//ÈôÃ»ÓĞÓëopenidÏà¹ØÁªµÄÓÃ»§£¬Ôò½«openid´æ´¢µ½flowscopeÖĞ
+		        	//è‹¥æ²¡æœ‰ä¸openidç›¸å…³è”çš„ç”¨æˆ·ï¼Œåˆ™å°†openidå­˜å‚¨åˆ°flowscopeä¸­
 		        	context.getFlowScope().put("openid", openid);
 		        }
 	        }catch (Exception e){
 	        	e.printStackTrace();
-	        	//ÈôÃ»ÓĞÓëopenidÏà¹ØÁªµÄÓÃ»§£¬Ôò½«openid´æ´¢µ½flowscopeÖĞ
+	        	//è‹¥æ²¡æœ‰ä¸openidç›¸å…³è”çš„ç”¨æˆ·ï¼Œåˆ™å°†openidå­˜å‚¨åˆ°flowscopeä¸­
 	        	context.getFlowScope().put("openid", openid);
 	        	System.out.println("put openid:"+context.getFlowScope().getString("openid"));
 	        }
